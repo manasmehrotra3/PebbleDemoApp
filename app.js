@@ -1,8 +1,8 @@
 /* global simply */
 
 simply.text({
-    title: 'High Performance.',
-    subtitle: 'Delivered.',
+    title: 'Hello World!',
+    subtitle: 'Version 1',
 }, true);
 
 simply.on('singleClick', function() {
