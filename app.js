@@ -1,10 +1,12 @@
-/* global simply */
+var count = parseInt(localStorage.getItem('count')) || 0;
 
-simply.text({
-    title: 'Hello World!',
-    subtitle: 'Version 1',
-}, true);
-
-simply.on('singleClick', function() {
-   simply.body("Okay! Good Job!"); 
+simply.on('singleClick', function(e) {
+  if (e.button === 'up') {
+    simply.subtitle(++count);
+  } else if (e.button === 'down') {
+    simply.subtitle(--count);
+  }
+  localStorage.setItem('count', count);
 });
+
+simply.text({ title: 'Counter', subtitle: count });
