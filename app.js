@@ -1,12 +1,8 @@
-var count = parseInt(localStorage.getItem('count')) || 0;
+simply.text({
+    title: 'Hello!',
+    subtitle: 'How are you?',
+}, true);
 
-simply.on('singleClick', function(e) {
-  if (e.button === 'up') {
-    simply.subtitle(++count);
-  } else if (e.button === 'down') {
-    simply.subtitle(--count);
-  }
-  localStorage.setItem('count', count);
+simply.on('singleClick', function() {
+   simply.body("I'm doing great!"); 
 });
-
-simply.text({ title: 'Counter', subtitle: count });
